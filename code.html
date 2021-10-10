@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>APP NAME | The Code </title>
+    <title>DEJA VOO | The Code </title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,6 +15,12 @@
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+
+     <!--FONT CSS-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png">
@@ -35,7 +41,7 @@
             <!-- <a class="navbar-brand" href="#">
                 <img src="/img/android-chrome-192x192.png" alt="" width="30" height="30">
             </a> -->
-            <a class="navbar-brand" href="/index.html">App Name</a>
+            <a id="Font" class="navbar-brand" href="/index.html">deja voo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,19 +49,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a id="Font" class="nav-link" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/app.html">The App</a>
+                        <a id="Font" class="nav-link" href="/app.html">The App</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+                        <a id="Font" class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                     </li>
+                     <li class="nav-item">
+                         <a id="Font" class="nav-link" target="_blank" href="https://github.com/danijha-lee/Rewind">The Repo</a>
+                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">The Repo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target="_blank " href="https://monaeleeportfolio.netlify.app">About Me</a>
+                        <a id="Font" class="nav-link" target="_blank "
+                            href="https://monaeleeportfolio.netlify.app">About Me</a>
                     </li>
                 </ul>
             </div>
@@ -67,35 +74,70 @@
 
         <div class="container col-xxl-8 px-4 py-5 mt-5">
 
-            <h2 class="border-1 border-bottom border-dark">The Code</h2>
+            <h2 id="Font" class="border-1 border-bottom border-dark">The Code</h2>
             <div class="row">
                 <div class="col-lg-8 col-sm-12">
                     <!-- My CODE -->
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            function displayMessage() {
-                            let msg = "";
+                          function getString() {
 
-                            msg = document.getElementById("message").value;
-
-                            alert(msg);
-                            }
+                          let userString = document.getElementById("userString").value;
 
 
-                            function displayMessage2() {
-                            let msg = "";
+                          if (userString == "") {
+                          Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...',
+                          text: 'You must enter 2 or more characters',
 
-                            msg = document.getElementById("message").value;
+                          })
+                          };
 
-                            Swal.fire(msg);
-                            }
+                          let revString = reverseString(userString);
+
+                          displayString(revString);
+
+                          }
+
+                          function reverseString(userString) {
+
+                          let startValue = userString.length - 1;
+                          let endValue = 0;
+
+                          let revString = "";
+
+                          for (let i = startValue; i &lt;= endValue; i--) {
+                          revString += userString[i];
+                          };
+
+                          return revString
+
+                          }
+
+                          function displayString(revString) {
+
+                          return Swal.fire({
+                          icon: 'success',
+                          title: 'Your Reversed String is:',
+                          text: `${revString}`,
+
+                          })
+
+                          }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4 col-sm-12">
-                    <p>The code is structured in one function</p>
-                    <h5>getValues</h5>
-                    <p>Prints out your Message!</p>
+                    <h5>getString</h5>
+                    <p>This function gets the user's input.</p>
+                    <hr>
+                     <h5>reverseString</h5>
+                     <p>This function reverses the user's string in a decrementing for loop.</p>
+                     <hr>
+                      <h5>displayString</h5>
+                      <p>This function displays the newly reversed string to the user.</p>
+                      <hr>
                 </div>
             </div>
         </div>
@@ -113,9 +155,9 @@
                         <span class="text-muted">&copy2021</span>Monae Lee | TheMonaeLee@gmail.com
                     </div>
                 </div>
-                <!-- <div class="col justify-content-center">
-                    <img src="/img/Black Background - Name - Crop.png" height="50">
-                </div> -->
+                <div class="col justify-content-center">
+                    <!-- <img src="/img/Black Background - Name - Crop.png" height="50">-->
+                </div> 
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
                     <div class="row">
                         <div class="col social"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></div>
